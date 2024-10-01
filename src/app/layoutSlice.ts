@@ -14,10 +14,10 @@ const layoutSlice = createSlice({
   name: 'layout',
   initialState,
   reducers: {
-    toggleNavBar: (state) => {
+    toggleNavBar: state => {
       state.navBarOpen = !state.navBarOpen;
     },
-    toggleSmartPanel: (state) => {
+    toggleSmartPanel: state => {
       state.smartPanelOpen = !state.smartPanelOpen;
     },
   },

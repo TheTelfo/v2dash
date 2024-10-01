@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# v2dash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+v2dash is a dashboard application built with React, TypeScript, and Vite. It leverages Redux for state management and Material-UI for UI components. The application includes various widgets like charts, grids, and metrics to display data dynamically.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
 
-## Expanding the ESLint configuration
+- **package.json**: Project metadata, scripts, dependencies, and devDependencies.
+- **index.html**: Main HTML file with the root div and script to load the React app.
+- **src/index.css**: Global CSS styles.
+- **README.md**: Project documentation.
+- **tsconfig.json**: TypeScript configuration.
+- **vite.config.ts**: Vite configuration.
+- **public/vite.svg**: Public assets.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Key Components
 
-- Configure the top-level `parserOptions` property like this:
+- **src/main.tsx**: Entry point of the React application.
+- **src/app/app.tsx**: Main App component with theme and layout setup.
+- **src/app/store.ts**: Redux store configuration.
+- **src/app/layoutSlice.ts**: Redux slice for layout state.
+- **src/components/layout/TopBar.tsx**: Top navigation bar.
+- **src/components/layout/NavBar.tsx**: Side navigation bar.
+- **src/components/layout/SmartPanel.tsx**: Side panel for settings and information.
+- **src/components/layout/MainContent.tsx**: Main content area.
+- **src/components/shared/ErrorBoundary.tsx**: Error boundary component.
+- **src/components/widget/GridWidget.tsx**: Grid widget component.
+- **src/components/widget/MetricWidget.tsx**: Metric widget component.
+- **src/components/widget/ChartWidget.tsx**: Chart widget component.
+- **src/types/dashboard.ts**: TypeScript types for dashboard widgets.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Dependencies
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **React**: JavaScript library for building user interfaces.
+- **Redux**: State management library.
+- **MUI**: Material-UI for React components.
+- **ECharts**: Charting library.
+- **Vite**: Frontend tooling.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## DevDependencies
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **TypeScript**: Typed superset of JavaScript.
+- **ESLint**: Linting utility.
+- **Prettier**: Code formatter.
+
+## Getting Started
+
+1. **Install dependencies**:
+    ```sh
+    yarn install
+    ```
+
+2. **Run the development server**:
+    ```sh
+    yarn dev
+    ```
+
+3. **Build the project**:
+    ```sh
+    yarn build
+    ```
+
+4. **Preview the build**:
+    ```sh
+    yarn preview
+    ```
+
+## Scripts
+
+- **dev**: Starts the development server.
+- **build**: Builds the project for production.
+- **lint**: Runs ESLint to lint the codebase.
+- **preview**: Previews the production build.
+
+## License
+
+This project is licensed under the MIT License.

@@ -10,7 +10,7 @@ const MainContent: React.FC = () => {
   return (
     <Box
       component="main"
-      sx={(theme) => ({
+      sx={theme => ({
         flexGrow: 1,
         padding: theme.spacing(0.5),
         transition: theme.transitions.create(['margin'], {
@@ -30,5 +30,3 @@ const MainContent: React.FC = () => {
 };
 
 export default MainContent;
-
-

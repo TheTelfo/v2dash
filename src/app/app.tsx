@@ -17,18 +17,17 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      
-        <TopBar title="Bend Logic Dashboard" />
-        <NavBar open={navBarOpen} />
-        <SmartPanel open={smartPanelOpen} />
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <Toolbar /> {/* Spacer to push content below TopBar */}
-          <MainContent>
-            {/* Inject different content here */}
-            {/* Example: <DashboardPage /> */}
-          </MainContent>
-        </Box>
-      
+
+      <TopBar title="Bend Logic Dashboard" />
+      <NavBar open={navBarOpen} />
+      <SmartPanel open={smartPanelOpen} />
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Toolbar /> {/* Spacer to push content below TopBar */}
+        <MainContent>
+          {/* Inject different content here */}
+          {/* Example: <DashboardPage /> */}
+        </MainContent>
+      </Box>
     </ThemeProvider>
   );
 };

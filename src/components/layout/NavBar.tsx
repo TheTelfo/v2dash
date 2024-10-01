@@ -56,7 +56,13 @@ const NavBar: React.FC<NavBarProps> = ({ open }) => {
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index === 0 ? <DashboardIcon /> : index === 1 ? <BarChartIcon /> : <TableChartIcon />}
+                {index === 0 ? (
+                  <DashboardIcon />
+                ) : index === 1 ? (
+                  <BarChartIcon />
+                ) : (
+                  <TableChartIcon />
+                )}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
