@@ -52,7 +52,7 @@ const NavBar: React.FC<NavBarProps> = ({ open }) => {
       </IconButton>
       <Divider />
       <List>
-        {['Dashboard', 'Charts', 'Tables'].map((text, index) => (
+        {['Overview', 'Data', 'Goals', 'Logic Layer', 'Actions', 'Insights', 'Report', 'Builder'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
