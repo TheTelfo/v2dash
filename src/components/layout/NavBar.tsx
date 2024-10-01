@@ -1,3 +1,5 @@
+// src/components/layout/NavBar.tsx
+
 import React from 'react';
 import {
   Drawer,
@@ -14,10 +16,16 @@ import {
   ChevronLeft as ChevronLeftIcon,
   Dashboard as DashboardIcon,
   BarChart as BarChartIcon,
-  TableChart as TableChartIcon,
+  Flag as FlagIcon,
+  Layers as LayersIcon,
+  Build as BuildIcon,
+  Insights as InsightsIcon,
+  Assessment as AssessmentIcon,
+  BuildCircle as BuildCircleIcon,
 } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import { toggleNavBar } from '../../app/layoutSlice';
+import { Link as RouterLink } from 'react-router-dom';
 
 interface NavBarProps {
   open: boolean;
@@ -31,6 +39,17 @@ const NavBar: React.FC<NavBarProps> = ({ open }) => {
   const handleDrawerClose = () => {
     dispatch(toggleNavBar());
   };
+
+  const menuItems = [
+    { text: 'Overview', icon: <DashboardIcon />, path: '/' },
+    { text: 'Data', icon: <BarChartIcon />, path: '/data' },
+    { text: 'Goals', icon: <FlagIcon />, path: '/goals' },
+    { text: 'Logic Layer', icon: <LayersIcon />, path: '/logic-layer' },
+    { text: 'Actions', icon: <BuildIcon />, path: '/actions' },
+    { text: 'Insights', icon: <InsightsIcon />, path: '/insights' },
+    { text: 'Reports', icon: <AssessmentIcon />, path: '/reports' },
+    { text: 'Builder', icon: <BuildCircleIcon />, path: '/builder' },
+  ];
 
   return (
     <Drawer
@@ -52,19 +71,11 @@ const NavBar: React.FC<NavBarProps> = ({ open }) => {
       </IconButton>
       <Divider />
       <List>
-        {['Overview', 'Data', 'Goals', 'Logic Layer', 'Actions', 'Insights', 'Report', 'Builder'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index === 0 ? (
-                  <DashboardIcon />
-                ) : index === 1 ? (
-                  <BarChartIcon />
-                ) : (
-                  <TableChartIcon />
-                )}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+        {menuItems.map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton component={RouterLink} to={item.path}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -74,3 +85,4 @@ const NavBar: React.FC<NavBarProps> = ({ open }) => {
 };
 
 export default NavBar;
+
